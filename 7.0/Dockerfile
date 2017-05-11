@@ -34,6 +34,7 @@ RUN apt-get clean && apt-get update && apt-get install --fix-missing -y \
   zlib1g-dev \
   libicu-dev \
   libpq-dev \
+  libbz2-dev \
   bash-completion
 
 # postgresql-client-9.5
@@ -63,6 +64,7 @@ RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ \
   exif \
   pgsql \
   pdo_pgsql \
+  bz2 \
   ftp
 
 RUN pecl install yaml-2.0.0 && echo "extension=yaml.so" > /usr/local/etc/php/conf.d/ext-yaml.ini
